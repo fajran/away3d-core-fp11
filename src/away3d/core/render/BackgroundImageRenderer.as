@@ -124,6 +124,11 @@ package away3d.core.render
 			var h:Number = _fitToViewPort ? 1 : _bitmapData.height / _viewHeight;
 			w = w > 1 ? 1 : w;
 			h = h > 1 ? 1 : h;
+
+			// Make 640x480px image fullscreen
+			ratioX = 640 / _texWidth;
+			ratioY = 480 / _texHeight;
+
 			_vertexBuffer.uploadFromVector(Vector.<Number>([	-w, -h,   0,      ratioY,
 																 w, -h,   ratioX, ratioY,
 																 w,  h,   ratioX, 0,
